@@ -21,18 +21,25 @@ l'attaquant reconstruit intégralement la clé secrète $(G, L)$ : le polynôme 
 
 ───────────────────┐\\
 
-│1. Décodage MLE par FFT│\\
-│Acquisitions bruitées (n×N) → couples (α_i, β_i = G(α_i)^-2)│\
-│ Coût : O(P² log P) où P = 2^m - 1│\\
+│1. Décodage MLE par FFT│
+
+│Acquisitions bruitées (n×N) → couples (α_i, β_i = G(α_i)^-2)│
+
+│ Coût : O(P² log P) où P = 2^m - 1│
 ├─────────────────────────────────────────────────────────────────
 ─────────┤
 │2. Reconstruction algébrique de G│
+
 │Algorithme de Bernstein (2024) — interpolation Reed-Solomon│
+
 │avec correction d'erreurs│
+
 │Coût : O(n² m²) opérations binaires│
 ├─────────────────────────────────────────────────────────────────
 │3. Reconstruction du support L│
+
 │Pivot de Gauss sur la matrice de parité publique│
+
 │Coût : O((mt)³ + n(mt)²) opérations binaires│
 └─────────────────────────────────────────────────────────────────
 ─────────┘

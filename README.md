@@ -17,21 +17,23 @@ l'attaquant reconstruit intégralement la clé secrète $(G, L)$ : le polynôme 
 
 ## Pipeline d'attaque
 
-┌──────────────────────────────────────────────────────────────┐
-│ 1. Décodage MLE par FFT                                      │
-│    Acquisitions bruitées $(n\times N)$ →                     │
-│    $(\alpha_i,\beta_i = G(\alpha_i)^{-2})$                   │
-│    Coût : $O(P^2\log P)$, $P=2^m-1$                          │
-├──────────────────────────────────────────────────────────────┤
-│ 2. Reconstruction algébrique de $G$                          │
-│    Bernstein (2024) — interpolation Reed–Solomon             │
-│    avec correction d'erreurs                                 │
-│    Coût : $O(n^2m^2)$                                        │
-├──────────────────────────────────────────────────────────────┤
-│ 3. Reconstruction du support $L$                             │
-│    Pivot de Gauss sur la matrice de parité publique          │
-│    Coût : $O((mt)^3+n(mt)^2)$                                │
-└──────────────────────────────────────────────────────────────┘
+<table>
+<tr>
+<td><b>1. Décodage MLE par FFT</b></td>
+<td>Acquisitions bruitées (n×N) → (αᵢ, βᵢ = G(αᵢ)⁻²)</td>
+<td>O(P² log P), P = 2ᵐ − 1</td>
+</tr>
+<tr>
+<td><b>2. Reconstruction algébrique de G</b></td>
+<td>Bernstein (2024), interpolation Reed–Solomon avec correction d'erreurs</td>
+<td>O(n²m²)</td>
+</tr>
+<tr>
+<td><b>3. Reconstruction du support L</b></td>
+<td>Pivot de Gauss sur la matrice de parité publique</td>
+<td>O((mt)³ + n(mt)²)</td>
+</tr>
+</table>
 
 ## Résultats expérimentaux
 

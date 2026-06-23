@@ -59,19 +59,22 @@ L'attaque réussit complètement (reconstruction de $G$ **et** de $L$) tant que 
 | 3.0  | 0.9827   | 25      | ✓      | ✓      |
 
 ## Structure du dépôt
+```text
 .
-├──────src/
+├── 📁 src/
 │   ├── Classe_Classic_McEliece.py    # Implémentation du cryptosystème
 │   ├── Classe_Decodeur_FFT.py        # Décodeur MLE par FFT
 │   └── GoppaReconstructor.py         # Reconstruction algébrique
-
-├──────tests/
+│
+├── 📁 tests/
 │   └── tests.py                      # Pipeline de tests complet
-├──────docs/                             # Mémoire de stage (à venir)
-├──────results/                          # Résultats expérimentaux
-├──────requirements.txt
-├──────.gitignore
-└──────README.md
+│
+├── 📁 docs/                          # Mémoire de stage (à venir)
+├── 📁 results/                       # Résultats expérimentaux
+├── 📄 requirements.txt
+├── 📄 .gitignore
+└── 📄 README.md
+```
 ## Installation et utilisation
 
 ### Prérequis

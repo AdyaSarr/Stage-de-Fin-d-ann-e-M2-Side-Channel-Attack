@@ -17,27 +17,23 @@ l'attaquant reconstruit intégralement la clé secrète $(G, L)$ : le polynôme 
 
 ## Pipeline d'attaque
 
-$$
-    \boxed{
-\begin{tabular}{p{0.9\textwidth}}
-\textbf{1. Décodage MLE par FFT} \\[0.3em]
-\quad Acquisitions bruitées $(n\times N)$ $\rightarrow$
-couples $(\alpha_i,\;\beta_i = G(\alpha_i)^{-2})$ \\[0.3em]
-\quad Coût : $O(P^2 \log P)$ où $P = 2^m - 1$ \\[0.5em]
-\hline \\[-0.8em]
-
-\textbf{2. Reconstruction algébrique de $G$} \\[0.3em]
-\quad Algorithme de Bernstein (2024) --- interpolation Reed--Solomon \\
-\quad avec correction d'erreurs \\[0.3em]
-\quad Coût : $O(n^2 m^2)$ opérations binaires \\[0.5em]
-\hline \\[-0.8em]
-
-\textbf{3. Reconstruction du support $L$} \\[0.3em]
-\quad Pivot de Gauss sur la matrice de parité publique \\[0.3em]
-\quad Coût : $O((mt)^3 + n(mt)^2)$ opérations binaires
-\end{tabular}
-}
-$$
+```text
+┌──────────────────────────────────────────────────────────────┐
+│ 1. Décodage MLE par FFT                                      │
+│    Acquisitions bruitées $(n\times N)$ →                    │
+│    $(\alpha_i,\beta_i = G(\alpha_i)^{-2})$                  │
+│    Coût : $O(P^2\log P)$, $P=2^m-1$                         │
+├──────────────────────────────────────────────────────────────┤
+│ 2. Reconstruction algébrique de $G$                         │
+│    Bernstein (2024) — interpolation Reed–Solomon            │
+│    avec correction d'erreurs                                │
+│    Coût : $O(n^2m^2)$                                       │
+├──────────────────────────────────────────────────────────────┤
+│ 3. Reconstruction du support $L$                            │
+│    Pivot de Gauss sur la matrice de parité publique         │
+│    Coût : $O((mt)^3+n(mt)^2)$                               │
+└──────────────────────────────────────────────────────────────┘
+```
 ## Résultats expérimentaux
 
 ### Validation sur paramètres officiels Classic McEliece

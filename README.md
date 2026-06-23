@@ -43,7 +43,7 @@ l'attaquant reconstruit intégralement la clé secrète $(G, L)$ : le polynôme 
 |------------------|----|-----|------|------|---------|---------|
 | mceliece348864   | 12 | 64  | 3488 | 768  | 0 – 2.3 | ✓       |
 | mceliece348864   | 12 | 64  | 3488 | 2.5+ | ✗ (seuil atteint) |
-| mceliece460896   | 13 | 96  | 4608 | 1248 | 0 – 3.0+| ✓       |
+| mceliece460896   | 13 | 96  | 4608 | 1248 | 0 – 3.5 | ✓       |
 
 L'attaque réussit complètement (reconstruction de $G$ **et** de $L$) tant que le taux d'erreur du décodeur FFT reste sous environ 5 % pour `mceliece348864` et sous 3 % pour `mceliece460896`.
 

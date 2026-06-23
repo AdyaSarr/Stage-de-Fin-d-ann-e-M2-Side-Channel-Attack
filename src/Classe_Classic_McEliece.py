@@ -11,7 +11,6 @@ from random import choice
 #                               The official irreducible polynomial of Classic McEliece
 #====================================================================================================
 CLASSIC_MCELIECE_IRREDUCIBLE_POLYNOMIAL = {
-    'test': {'m':4, 't': 3, 'n': 16, 'irreducible_polynomial': [1, 0, 0, 1, 1]},
     'mceliece348864':  {'m': 12, 't': 64,  'n': 3488, 'irreducible_polynomial':   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1]},
     'mceliece460896':  {'m': 13, 't': 96,  'n': 4608, 'irreducible_polynomial':   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1]},
     'mceliece6688128': {'m': 13, 't': 128, 'n': 6688, 'irreducible_polynomial':   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1]},

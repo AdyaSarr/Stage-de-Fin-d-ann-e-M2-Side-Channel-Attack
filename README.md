@@ -46,6 +46,17 @@ l'attaquant reconstruit intégralement la clé secrète $(G, L)$ : le polynôme 
 
 L'attaque réussit complètement (reconstruction de $G$ **et** de $L$) tant que le taux d'erreur du décodeur FFT reste sous environ 5 % pour `mceliece348864` et sous 3 % pour `mceliece460896`.
 
+
+### Balayage de σ sur mceliece348864
+
+| σ    | p_succès | erreurs | rec. G | rec. L |
+|------|----------|---------|--------|--------|
+| 0.5  | 0.9969   | 3       | ✓      | ✓      |
+| 1.0  | 0.9979   | 2       | ✓      | ✓      |
+| 1.5  | 0.9886   | 11      | ✓      | ✓      |
+| 2.0  | 0.9329   | 65      | ✓      | ✓      |
+| 2.3  | 0.9132   | 84      | ✓      | ✓      |
+
 ### Balayage de σ sur mceliece460896
 
 | σ    | p_succès | erreurs | rec. G | rec. L |
@@ -144,6 +155,28 @@ L'attaque repose sur les outils suivants :
 
 Une étude détaillée du seuil de bruit toléré ($\sigma_c$), du nombre minimum de couples requis ($n_{\min}(p)$), ainsi qu'une analyse du cas pathologique des bases normales engendrées par $X$ (premiers d'Artin) sont présentées dans le mémoire.
 
+## Comparaison
+
+Ce modele d'attque presente des avantages comparés aux autres decrit sur les articles en refferences.
+Voici un tableau comparatif:
+
+## Tableau comparatif synthétique
+
+| Critère                      | Guo et al. 2022           | Dragoi et al. 2025         | Vallet et al. 2025        | Ton attaque                                          |
+| ---------------------------- | ------------------------- | -------------------------- | ------------------------- | ---------------------------------------------------- |
+| **Cible d'implémentation**   | Additive FFT (FPGA, M4)   | Syndrome (matrix-vector)   | Syndrome bruité           | Berlekamp-Massey (référence)                         |
+| **Modèle de fuite**          | Power analysis            | Hamming weight             | HW bruité (Gaussien)      | HW bruité (Gaussien)                                 |
+| **Méthode du décodeur**      | ML classifier (templates) | Distinguisher déterministe | ML + correction           | MLE par FFT                                          |
+| **Bruit toléré (σ)**         | Bas (templates parfaits)  | σ = 0 (modèle idéalisé)    | σ ≤ ~1.5 (mceliece348864) | σ ≤ ~2.0 (mceliece348864), σ ≤ ~3.0 (mceliece460896) |
+| **Reconstruction de G**      | Indirect via support      | Berlekamp-Massey + LFSR    | LFSR avec erreurs         | Bernstein RS interpolation                           |
+| **Reconstruction de L**      | Itératif                  | Pivot de Gauss             | Pivot de Gauss            | Pivot de Gauss (identique aux autres)                |
+| **Complexité totale**        | O(n)                      | O(n) traces                | O(n³)                     | O(n³)                                                |
+|                              | O(n³) algorithme          | O(n³)                      | O(n²m² + (mt)³ + n(mt)²)  | O(n²m² + (mt)³ + n(mt)²)                             |
+| **Validation expérimentale** | ChipWhisperer (réel)      | Cortex-M4 (réel)           | Simulation + réel         | Simulation seule (à ce stade)                        |
+| **Code source public**       | Non                       | Oui (TCHES 2025)           | Oui (CIC 2025)            | Oui (ton dépôt GitHub)                               |
+
+
+
 ## Références
 
 1. **Classic McEliece team.** *Classic McEliece: conservative code-based cryptography*. NIST PQC Round 4 submission (2022). [https://classic.mceliece.org/](https://classic.mceliece.org/)
@@ -154,7 +187,7 @@ Une étude détaillée du seuil de bruit toléré ($\sigma_c$), du nombre minimu
 
 4. **Vlad Dragoi, Brice Colombier, Nicolas Vallet, Pierre-Louis Cayrel, Vincent Grosso.**[https://hal.science/hal-04835914/document](https://hal.science/hal-04835914/document)
 
-5. **Michaël Bulois , Pierre-Louis Cayrel , Vlad-Florin Drăgoi , and Vincent Grosso**.**<Algebraic Key-Recovery Side-Channel Attack on Classic McEliece>**
+5. **Michaël Bulois , Pierre-Louis Cayrel , Vlad-Florin Drăgoi , and Vincent Grosso**.[https://hal.science/hal-05621977v1/document](https://hal.science/hal-05621977v1/document)
 
 6. **Annelie Heuser⋆, Olivier Rioul, and Sylvain Guilley**.[https://eprint.iacr.org/2014/527.pdf](https://eprint.iacr.org/2014/527.pdf)
 ## Auteur

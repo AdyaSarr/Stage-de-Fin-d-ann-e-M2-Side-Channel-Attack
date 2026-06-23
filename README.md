@@ -17,23 +17,22 @@ l'attaquant reconstruit intégralement la clé secrète $(G, L)$ : le polynôme 
 
 ## Pipeline d'attaque
 
-```text
 ┌──────────────────────────────────────────────────────────────┐
 │ 1. Décodage MLE par FFT                                      │
-│    Acquisitions bruitées $(n\times N)$ →                    │
-│    $(\alpha_i,\beta_i = G(\alpha_i)^{-2})$                  │
-│    Coût : $O(P^2\log P)$, $P=2^m-1$                         │
+│    Acquisitions bruitées $(n\times N)$ →                     │
+│    $(\alpha_i,\beta_i = G(\alpha_i)^{-2})$                   │
+│    Coût : $O(P^2\log P)$, $P=2^m-1$                          │
 ├──────────────────────────────────────────────────────────────┤
-│ 2. Reconstruction algébrique de $G$                         │
-│    Bernstein (2024) — interpolation Reed–Solomon            │
-│    avec correction d'erreurs                                │
-│    Coût : $O(n^2m^2)$                                       │
+│ 2. Reconstruction algébrique de $G$                          │
+│    Bernstein (2024) — interpolation Reed–Solomon             │
+│    avec correction d'erreurs                                 │
+│    Coût : $O(n^2m^2)$                                        │
 ├──────────────────────────────────────────────────────────────┤
-│ 3. Reconstruction du support $L$                            │
-│    Pivot de Gauss sur la matrice de parité publique         │
-│    Coût : $O((mt)^3+n(mt)^2)$                               │
+│ 3. Reconstruction du support $L$                             │
+│    Pivot de Gauss sur la matrice de parité publique          │
+│    Coût : $O((mt)^3+n(mt)^2)$                                │
 └──────────────────────────────────────────────────────────────┘
-```
+
 ## Résultats expérimentaux
 
 ### Validation sur paramètres officiels Classic McEliece

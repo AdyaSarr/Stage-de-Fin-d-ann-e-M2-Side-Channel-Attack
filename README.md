@@ -21,7 +21,7 @@ l'attaquant reconstruit intégralement la clé secrète $(G, L)$ : le polynôme 
 <tr>
 <td><b>1. Décodage MLE par FFT</b></td>
 <td>Acquisitions bruitées (n×N) → (αᵢ, βᵢ = G(αᵢ)⁻²)</td>
-<td>O(P² log P), P = 2ᵐ − 1</td>
+<td>O(P² log P),P = 2ᵐ − 1</td>
 </tr>
 <tr>
 <td><b>2. Reconstruction algébrique de G</b></td>

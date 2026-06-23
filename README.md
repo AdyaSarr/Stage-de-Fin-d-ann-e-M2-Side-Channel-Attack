@@ -167,13 +167,13 @@ Voici un tableau comparatif:
 | **Cible d'implémentation**   | Additive FFT (FPGA, M4)   | Syndrome (matrix-vector)   | Syndrome bruité           | Berlekamp-Massey (référence)                         |
 | **Modèle de fuite**          | Power analysis            | Hamming weight             | HW bruité (Gaussien)      | HW bruité (Gaussien)                                 |
 | **Méthode du décodeur**      | ML classifier (templates) | Distinguisher déterministe | ML + correction           | MLE par FFT                                          |
-| **Bruit toléré (σ)**         | Bas (templates parfaits)  | σ = 0 (modèle idéalisé)    | σ ≤ ~1.5 (mceliece348864) | σ ≤ ~2.0 (mceliece348864), σ ≤ ~3.0 (mceliece460896) |
+| **Bruit toléré (σ)**         | Bas (templates parfaits)  | σ = 0 (modèle idéalisé)    | σ ≤ ~0.38(mceliece348864) | σ ≤ ~2.0 (mceliece348864), σ ≤ ~3.0 (mceliece460896) |
 | **Reconstruction de G**      | Indirect via support      | Berlekamp-Massey + LFSR    | LFSR avec erreurs         | Bernstein RS interpolation                           |
 | **Reconstruction de L**      | Itératif                  | Pivot de Gauss             | Pivot de Gauss            | Pivot de Gauss (identique aux autres)                |
 | **Complexité totale**        | O(n)                      | O(n) traces                | O(n³)                     | O(n³)                                                |
 |                              | O(n³) algorithme          | O(n³)                      | O(n²m² + (mt)³ + n(mt)²)  | O(n²m² + (mt)³ + n(mt)²)                             |
 | **Validation expérimentale** | ChipWhisperer (réel)      | Cortex-M4 (réel)           | Simulation + réel         | Simulation seule (à ce stade)                        |
-| **Code source public**       | Non                       | Oui (TCHES 2025)           | Oui (CIC 2025)            | Oui (ton dépôt GitHub)                               |
+| **Code source public**       | Non                       | Oui (TCHES 2025)           | Oui (CIC 2025)            | Oui                                |
 
 
 

@@ -18,9 +18,9 @@ l'attaquant reconstruit intégralement la clé secrète $(G, L)$ : le polynôme 
 ## Pipeline d'attaque
 
 ┌─────────────────────────────────────────────────────────────────┐
-│  1. Décodage MLE par FFT                                        │
+│  1. Décodage MLE par FFT\                                       │
 │                                                                 │
-│     Acquisitions bruitées (n×N) → couples (α_i, β_i = G(α_i)^-2)│
+│    Acquisitions bruitées (n×N) → couples (α_i, β_i = G(α_i)^-2)\│
 │                                                                 │
 │     Coût : O(P² log P) où P = 2^m - 1                           │
 ├─────────────────────────────────────────────────────────────────┤

@@ -162,7 +162,7 @@ Voici un tableau comparatif:
 
 ## Tableau comparatif synthétique
 
-| Critère                      | Guo et al. 2022           | Dragoi et al. 2025         | Vallet et al. 2025        | Ton attaque                                          |
+| Critère                      | Guo et al. 2022           | Dragoi et al. 2025         | Vallet et al. 2025        | Mon Sujet                                          |
 | ---------------------------- | ------------------------- | -------------------------- | ------------------------- | ---------------------------------------------------- |
 | **Cible d'implémentation**   | Additive FFT (FPGA, M4)   | Syndrome (matrix-vector)   | Syndrome bruité           | Berlekamp-Massey (référence)                         |
 | **Modèle de fuite**          | Power analysis            | Hamming weight             | HW bruité (Gaussien)      | HW bruité (Gaussien)                                 |

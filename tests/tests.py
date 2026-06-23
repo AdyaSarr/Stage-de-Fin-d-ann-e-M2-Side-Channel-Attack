@@ -19,6 +19,7 @@ Auteur : Adya SARR
 import numpy as np
 import time
 import sys
+sys.path.insert(0, 'src')
 
 from Classe_Classic_McEliece import ClassicMcEliece
 from Classe_Decodeur_FFT import DecodorFFT
@@ -144,7 +145,7 @@ def test_pipeline_deterministe(param_name='mceliece348864', n_pairs=None):
     n, mt, t = mc.n, mc.mt, mc.t
     
     if n_pairs is None:
-        n_pairs = n                          # tout le support
+        n_pairs = min(mt + 200, n)                          # tout le support
     n_pairs = min(n_pairs, n)
     print(f"  Nombre de couples à acquérir : {n_pairs}")
     
@@ -443,8 +444,8 @@ if __name__ == '__main__':
         if param.isdigit():
             param = 'mceliece' + param
     else:
-        #param = 'mceliece348864'
-        param = 'mceliece460896'
+        param = 'mceliece348864'
+        #param = 'mceliece460896'
         #param = 'mceliece6688128'
         #param = 'mceliece6960119'
         #param = 'mceliece8192128'
@@ -456,7 +457,7 @@ if __name__ == '__main__':
     print("#" * 70)
     
     # Sigma utilisé pour le Test 2 (modifiable selon les besoins)
-    sigma_test2 = 4.5
+    sigma_test2 = 2.3
     
     # --- Test 1 : déterministe ---
     success_1 = test_pipeline_deterministe(param)
@@ -466,7 +467,7 @@ if __name__ == '__main__':
     
     #--- Test 3 : balayage σ (décommenter pour activer) ---
     results = test_sigma_sweep(param,
-                               sigma_list=[0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5, 5.5, 6, 6.5])
+                               sigma_list=[0.5, 1.0, 1.5, 2.0, 2.3, 2.4, 2.5, 3.0, 3.5, 4.0, 4.5, 5, 5.5, 6, 6.5])
     
     # --- Résumé final ---
     banner("RÉSUMÉ DES TESTS")

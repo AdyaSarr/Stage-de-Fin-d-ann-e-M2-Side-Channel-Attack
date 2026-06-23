@@ -19,9 +19,9 @@ l'attaquant reconstruit intégralement la clé secrète $(G, L)$ : le polynôme 
 
 ┌─────────────────────────────────────────────────────────────────┐
 
-───────────────────┐\\
+───────────────────┐
 
-│1. Décodage MLE par FFT│
+│1. Décodage MLE par FFT│$
 
 │Acquisitions bruitées (n×N) → couples (α_i, β_i = G(α_i)^-2)│
 

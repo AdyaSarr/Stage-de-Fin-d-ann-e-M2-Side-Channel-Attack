@@ -17,32 +17,23 @@ l'attaquant reconstruit intégralement la clé secrète $(G, L)$ : le polynôme 
 
 ## Pipeline d'attaque
 
-┌─────────────────────────────────────────────────────────────────┐
-
-───────────────────┐
-
-│1. Décodage MLE par FFT│$
-
-│Acquisitions bruitées (n×N) → couples (α_i, β_i = G(α_i)^-2)│
-
-│ Coût : O(P² log P) où P = 2^m - 1│
-├─────────────────────────────────────────────────────────────────
-─────────┤
-│2. Reconstruction algébrique de G│
-
-│Algorithme de Bernstein (2024) — interpolation Reed-Solomon│
-
-│avec correction d'erreurs│
-
-│Coût : O(n² m²) opérations binaires│
-├─────────────────────────────────────────────────────────────────
-│3. Reconstruction du support L│
-
-│Pivot de Gauss sur la matrice de parité publique│
-
-│Coût : O((mt)³ + n(mt)²) opérations binaires│
-└─────────────────────────────────────────────────────────────────
-─────────┘
+<table>
+<tr>
+<td><b>1. Décodage MLE par FFT</b></td>
+<td>Acquisitions bruitées (n×N) → (αᵢ, βᵢ = G(αᵢ)⁻²)</td>
+<td>O(P² log P), P = 2ᵐ − 1</td>
+</tr>
+<tr>
+<td><b>2. Reconstruction algébrique de G</b></td>
+<td>Bernstein (2024), interpolation Reed–Solomon avec correction d'erreurs</td>
+<td>O(n²m²)</td>
+</tr>
+<tr>
+<td><b>3. Reconstruction du support L</b></td>
+<td>Pivot de Gauss sur la matrice de parité publique</td>
+<td>O((mt)³ + n(mt)²)</td>
+</tr>
+</table>
 ## Résultats expérimentaux
 
 ### Validation sur paramètres officiels Classic McEliece
@@ -67,19 +58,22 @@ L'attaque réussit complètement (reconstruction de $G$ **et** de $L$) tant que 
 | 3.0  | 0.9827   | 25      | ✓      | ✓      |
 
 ## Structure du dépôt
+```text
 .
-├──────src/
+├── 📁 src/
 │   ├── Classe_Classic_McEliece.py    # Implémentation du cryptosystème
 │   ├── Classe_Decodeur_FFT.py        # Décodeur MLE par FFT
 │   └── GoppaReconstructor.py         # Reconstruction algébrique
-
-├──────tests/
+│
+├── 📁 tests/
 │   └── tests.py                      # Pipeline de tests complet
-├──────docs/                             # Mémoire de stage (à venir)
-├──────results/                          # Résultats expérimentaux
-├──────requirements.txt
-├──────.gitignore
-└──────README.md
+│
+├── 📁 docs/                          # Mémoire de stage (à venir)
+├── 📁 results/                       # Résultats expérimentaux
+├── 📄 requirements.txt
+├── 📄 .gitignore
+└── 📄 README.md
+```
 ## Installation et utilisation
 
 ### Prérequis

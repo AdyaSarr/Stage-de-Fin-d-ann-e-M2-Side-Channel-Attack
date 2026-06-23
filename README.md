@@ -41,7 +41,7 @@ l'attaquant reconstruit intégralement la clé secrète $(G, L)$ : le polynôme 
 | Paramètre        | m  | t   | n    | mt   | σ testé | Attaque |
 |------------------|----|-----|------|------|---------|---------|
 | mceliece348864   | 12 | 64  | 3488 | 768  | 0 – 2.3 | ✓       |
-| mceliece348864   | 12 | 64  | 3488 | 2.5+ | ✗ (seuil atteint) |
+| mceliece348864   | 12 | 64  | 3488 | 2.4+ | ✗ (seuil atteint) |
 | mceliece460896   | 13 | 96  | 4608 | 1248 | 0 – 3.0+| ✓       |
 
 L'attaque réussit complètement (reconstruction de $G$ **et** de $L$) tant que le taux d'erreur du décodeur FFT reste sous environ 5 % pour `mceliece348864` et sous 3 % pour `mceliece460896`.
@@ -98,7 +98,7 @@ python tests/tests.py mceliece348864
 python tests/tests.py mceliece460896 
 ```
 
-### Exemple d'utilisation programmatique
+### Exemple d'utilisation
 
 ```python
 import sys

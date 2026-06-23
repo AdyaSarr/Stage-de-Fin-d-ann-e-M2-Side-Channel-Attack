@@ -83,8 +83,8 @@ def compute_attack_params(n_pairs, n_errors, t, margin=20, extra_pairs=50):
     The constraint is : r_for_G ≥ t + 2*e_max + 1.
     
     Strategy :
-        1. e_max = n_errors + margin (safety margin against under-estimation)
-        2. r_for_G = t + 2*e_max + extra_pairs (extra margin)
+        1. e_max = n_errors + margin
+        2. r_for_G = t + 2*e_max + extra_pairs
         3. Clamp r_for_G ≤ n_pairs
         4. Re-derive e_max from final r_for_G if r_for_G was clamped
     
@@ -122,13 +122,10 @@ def compute_attack_params(n_pairs, n_errors, t, margin=20, extra_pairs=50):
 # =========================================================================
 
 def test_pipeline_deterministe(param_name='mceliece348864', n_pairs=None):
-    """Test of pipeline complet en l'absence de bruit (σ = 0).
+    """Complete test without noise on the acqusitiion (σ = 0).
     
-    Sans bruit, le décodeur FFT doit retrouver TOUS les (α_i, β_i) exacts,
-    puis la reconstruction algébrique doit donner (G_hat, L_hat) = (G, L).
-    
-    Ce test isole les bugs de la reconstruction algébrique (G, L) sans
-    interférence du bruit.
+    Without noise, the decodor FFT must be find all of couple (alpha_i, beta_i) exactly,
+    and the algebric construction must be give () (G_hat, L_hat) = (G, L).
     """
     banner(f"TEST 1 : Pipeline déterministe (σ=0) sur '{param_name}'")
     
@@ -145,7 +142,7 @@ def test_pipeline_deterministe(param_name='mceliece348864', n_pairs=None):
     n, mt, t = mc.n, mc.mt, mc.t
     
     if n_pairs is None:
-        n_pairs = min(mt + 200, n)                          # tout le support
+        n_pairs = min(mt + 10, n)                          # tout le support
     n_pairs = min(n_pairs, n)
     print(f"  Nombre de couples à acquérir : {n_pairs}")
     
@@ -181,7 +178,7 @@ def test_pipeline_deterministe(param_name='mceliece348864', n_pairs=None):
     attacker = GoppaAttack(mc)
     positions = np.arange(n_pairs, dtype=np.int64)
     
-    # Auto-calcul (e_max, r_for_G) cohérents
+    #Calculer (e_max, r_for_G) cohérents
     e_max, r_for_G = compute_attack_params(n_pairs, n_errors, t)
     print(f"  r_for_G = {r_for_G}, e_max = {e_max} (n_errors observés = {n_errors})")
     
@@ -232,15 +229,14 @@ def test_pipeline_deterministe(param_name='mceliece348864', n_pairs=None):
 # =========================================================================
 
 def test_pipeline_bruit(param_name='mceliece348864', sigma=1.0, n_pairs=None):
-    """Test du pipeline complet avec bruit gaussien d'écart-type σ.
-    
-    Le bruit introduit des erreurs dans le décodage FFT, qui sont
-    ensuite corrigées par l'algorithme de Bernstein dans reconstruct_G.
-    
+    """Complete test with Gaussian noise and standard deviation σ.
+    The noise introduces maybe errors in the decodor FFT, that are
+    correct by Bernstein's algorithme in reconstruct_G.
+
     Args:
-        param_name : nom du paramètre Classic McEliece
-        sigma : écart-type du bruit gaussien
-        n_pairs : nombre de couples à acquérir (default : tout le support)
+        param_name : name of parameter Classic McEliece
+        sigma : standard deviation on Gaussian Noise
+        n_pairs : the number of couple to have(default: all of the support)
     """
     banner(f"TEST 2 : Pipeline avec bruit σ={sigma} sur '{param_name}'")
     
@@ -256,10 +252,10 @@ def test_pipeline_bruit(param_name='mceliece348864', sigma=1.0, n_pairs=None):
     G, L = secret_key
     n, mt, t = mc.n, mc.mt, mc.t
     
-    # Pour reconstruire L on a besoin de ≥ mt couples corrects.
-    # On prend une marge confortable pour absorber les erreurs.
+    # To reconstruct L we need ≥ mt couples corrects.
+    # By the rapport this value is sufficient to compute all the support
     if n_pairs is None:
-        n_pairs = min(mt + 200, n)           # marge de 200 couples
+        n_pairs = min(mt + 10, n)           
     n_pairs = min(n_pairs, n)
     print(f"  Nombre de couples à acquérir : {n_pairs}")
     
@@ -287,7 +283,7 @@ def test_pipeline_bruit(param_name='mceliece348864', sigma=1.0, n_pairs=None):
     print(f"  Décodage FFT : {n_correct}/{n_total} corrects "
           f"(p_success = {p_success:.4f}, {n_errors} erreurs)")
     
-    # Capacité théorique de correction (avec tous les couples)
+    # Correction capacity
     e_max_theorique = (n_pairs - t) // 2
     print(f"  e_max théorique (avec tous les couples) = {e_max_theorique}")
     if n_errors > e_max_theorique:
@@ -295,12 +291,12 @@ def test_pipeline_bruit(param_name='mceliece348864', sigma=1.0, n_pairs=None):
               f"({e_max_theorique})")
         print(f"  L'attaque va probablement échouer.")
     
-    # --- [4] Reconstruction algébrique ---
+    # --- [4] Algebric reconstruction ---
     subsection("[4] Reconstruction algébrique")
     attacker = GoppaAttack(mc)
     positions = np.arange(n_pairs, dtype=np.int64)
     
-    # Auto-calcul (e_max, r_for_G) cohérents
+    # Compute consistent couple(e_max, r_for_G) 
     e_max, r_for_G = compute_attack_params(n_pairs, n_errors, t)
     print(f"  r_for_G = {r_for_G}, e_max = {e_max} (n_errors observés = {n_errors})")
     
@@ -313,7 +309,7 @@ def test_pipeline_bruit(param_name='mceliece348864', sigma=1.0, n_pairs=None):
     elapsed_reco = time.time() - t0
     print(f"  full_attack : {elapsed_reco:.2f}s")
     
-    # --- [5] Vérification ---
+    # --- [5] Verification ---
     subsection("[5] Vérification")
     
     if G_hat is None:
@@ -347,13 +343,12 @@ def test_pipeline_bruit(param_name='mceliece348864', sigma=1.0, n_pairs=None):
 
 def test_sigma_sweep(param_name='mceliece348864', sigma_list=None,
                      n_pairs=None):
-    """Test du pipeline pour plusieurs valeurs de σ, pour observer
-    le seuil pratique de bruit toléré.
+    """Tests fo differents values of σ, to look the treshold of σ.
     
     Args:
-        param_name : nom du paramètre
-        sigma_list : liste des σ à tester
-        n_pairs : nombre de couples (constant à travers les σ)
+        param_name : name of the parameter
+        sigma_list : list of σ
+        n_pairs : number of couples
     """
     if sigma_list is None:
         sigma_list = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6]
@@ -436,8 +431,7 @@ def test_sigma_sweep(param_name='mceliece348864', sigma_list=None,
 # =========================================================================
 
 if __name__ == '__main__':
-    # Paramètres par défaut. Pour des tests plus grands, passer un argument
-    # en ligne de commande : python tests.py 8192128
+    # Commande line : python tests.py 8192128
     
     if len(sys.argv) > 1:
         param = sys.argv[1]

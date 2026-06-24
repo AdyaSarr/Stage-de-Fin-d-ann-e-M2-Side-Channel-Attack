@@ -194,6 +194,7 @@ Soient $(a, b), (a', b')$ $\in$ $\mathbb{Z}/P\mathbb{Z}$ $\times$ $\mathbb{Z}/P\
 |   mceliece6688128               |  Regarder les 99.99% des elements du corps |   $N_0$ = 21 suffit pour distinguer 99.99% des elements de maniere unique |  Le **stablisateur affine** est **trivial**|
 |   mceliece6960119               |  Regarder les 99.99% des elements du corps |   $N_0$ = 21 suffit pour distinguer 99.99% des elements de maniere unique |  Le **stablisateur affine** est **trivial**|
 |   mceliece8192128               |  Regarder les 99.99% des elements du corps |   $N_0$ = 21 suffit pour distinguer 99.99% des elements de maniere unique |  Le **stablisateur affine** est **trivial**|
+|   mceliece348864_poly_cyclo     |  Regarder les 42.19% des elements du corps |   $N_0$ = 18 suffit pour distinguer 42.19% des elements de maniere unique |  Le **stablisateur affine** est **trivial**|
 ## Références
 
 1. **Classic McEliece team.** *Classic McEliece: conservative code-based cryptography*. NIST PQC Round 4 submission (2022). [https://classic.mceliece.org/](https://classic.mceliece.org/)

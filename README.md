@@ -179,7 +179,7 @@ Voici un tableau comparatif:
 ### Théorème 1: Identifiabilite
 Ce théorème donne des **conditions necessaires et suffisantes(C1, C2, C1)** pour lesquelles la **séquence de poids** determine de manière **unique** le couple **(a,b)**.
 
-Soient $(a, b), (a', b') \in \Z/P\Z \times \Z/P\Z$ deux couples vérifiant les trois hypothèses suivantes :
+Soient $(a, b), (a', b')$ $\in$ $\Z/P\Z$ $\times$ $\Z/P\Z$ deux couples vérifiant les trois hypothèses suivantes :
 \begin{itemize}
 \item[\textbf{(C1)}] $a$ et $a'$ sont \emph{primitifs} modulo $P$, c'est-à-dire $\gcd(a, P) = \gcd(a', P) = 1$.
 

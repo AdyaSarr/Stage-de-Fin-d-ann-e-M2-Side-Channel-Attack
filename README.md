@@ -164,10 +164,10 @@ Voici un tableau comparatif:
 
 | Critère                      | Guo et al. 2022           | Dragoi et al. 2025         | Vallet et al. 2025        | Mon Sujet                                          |
 | ---------------------------- | ------------------------- | -------------------------- | ------------------------- | ---------------------------------------------------- |
-| **Cible d'implémentation**   | Additive FFT (FPGA, M4)   | Syndrome (matrix-vector)   | Syndrome bruité           | Berlekamp-Massey (référence)                         |
-| **Modèle de fuite**          | Power analysis            | Hamming weight             | HW bruité (Gaussien)      | HW bruité (Gaussien)                                 |
+| **Cible d'implémentation**   | Additive FFT (FPGA, M4)   | Syndrome (matrix-vector)   | Syndrome bruité           | L'algorithme de **decapsulation**                         |
+| **Modèle de fuite**          | Power analysis            | Hamming weight             | HW bruité (Gaussien)      | HW bruité (Gaussien, Laplacien)                                 |
 | **Méthode du décodeur**      | ML classifier (templates) | Distinguisher déterministe | ML + correction           | MLE par FFT                                          |
-| **Bruit toléré (σ)**         | Bas (templates parfaits)  | σ = 0 (modèle idéalisé)    | σ ≤ ~0.38(mceliece348864) | σ ≤ ~2.0 (mceliece348864), σ ≤ ~3.0 (mceliece460896) |
+| **Bruit toléré (σ)**         | Bas (templates parfaits)  | σ = 0 (modèle idéalisé)    | σ ≤ ~0.38<===>accuracy=0.85 (mceliece348864) | σ ≤ ~2.0<==>accuracy=0.2 (mceliece348864), σ ≤ ~3.0<=====>accuracy=0.1 (mceliece460896) |
 | **Reconstruction de G**      | Indirect via support      | Berlekamp-Massey + LFSR    | LFSR avec erreurs         | Bernstein RS interpolation                           |
 | **Reconstruction de L**      | Itératif                  | Pivot de Gauss             | Pivot de Gauss            | Pivot de Gauss (identique aux autres)                |
 | **Complexité totale**        | O(n)                      | O(n) traces                | O(n³)                     | O(n³)                                                |

@@ -190,8 +190,8 @@ Soient $(a, b), (a', b')$ $\in$ $mathbb(Z)/Pmathbb(Z)$ $\times$ $mathbb(Z)/Pmath
 
 |   **Parametres**                |   **C1**                                   |**C2**                                        |   **C3**  |
 |---------------------------------|--------------------------------------------|----------------------------------------------|-----------|
-|   mceliece348864                |  Regarder les 42.19% des elements du corps |   N_0 = 18 suffit pour distinguer 42.19% des elements de maniere unique |  Le **stablisateur affine** est **trivial**        |
-|   mceliece460896                |  Regarder les 99.99% des elements du corps |   N_0 = 21 suffit pour distinguer 99.99% des elements de maniere unique |  Le **stablisateur affine** est **trivial**        |
+|   mceliece348864                |  Regarder les 42.19% des elements du corps |   $N_0$ = 18 suffit pour distinguer 42.19% des elements de maniere unique |  Le **stablisateur affine** est **trivial**        |
+|   mceliece460896                |  Regarder les 99.99% des elements du corps |   $N_0$ = 21 suffit pour distinguer 99.99% des elements de maniere unique |  Le **stablisateur affine** est **trivial**        |
 ## Références
 
 1. **Classic McEliece team.** *Classic McEliece: conservative code-based cryptography*. NIST PQC Round 4 submission (2022). [https://classic.mceliece.org/](https://classic.mceliece.org/)

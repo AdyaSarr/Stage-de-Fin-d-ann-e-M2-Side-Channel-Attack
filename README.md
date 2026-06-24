@@ -78,6 +78,9 @@ L'attaque réussit complètement (reconstruction de $G$ **et** de $L$) tant que 
 │
 ├── 📁 tests/
 │   └── tests.py                      # Pipeline de tests complet
+|
+├── 📁 theoremes/
+│   └── theoreme1_identifiabilite.py  # Theoreme 1
 │
 ├── 📁 docs/                          # Mémoire de stage (à venir)
 ├── 📁 results/                       # Résultats expérimentaux

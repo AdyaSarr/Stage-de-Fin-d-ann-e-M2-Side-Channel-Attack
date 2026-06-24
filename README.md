@@ -185,7 +185,7 @@ Soient $(a, b), (a', b')$ $\in$ $\mathbb{Z}/P\mathbb{Z}$ $\times$ $\mathbb{Z}/P\
 
 -(C2) $N \geq N_0(m, \pi)$, où $N_0(m, \pi)$ est le seuil de la séquence.
 
--(C3 étendue) $\Stab_{Aff}(f) = \{(1, 0)\}$ : le seul élément du groupe affine préservant $f$ est l'identité.
+-(C3 étendue) $Stab_{Aff}(f) = \{(1, 0)\}$ : le seul élément du groupe affine préservant $f$ est l'identité.
 
 |   **Parametres**                |   **C1**                                   |**C2**                                        |   **C3**  |
 |---------------------------------|--------------------------------------------|----------------------------------------------|-----------|

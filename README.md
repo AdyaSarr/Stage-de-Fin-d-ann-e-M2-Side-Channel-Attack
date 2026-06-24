@@ -156,7 +156,7 @@ L'attaque repose sur les outils suivants :
 - **Algorithme d'interpolation Reed-Solomon avec erreurs** de Daniel J. Bernstein (*Understanding binary-Goppa decoding*, IACR ePrint 2024), avec calcul d'approximants par résolution d'un système linéaire.
 - **Reconstruction du support de Goppa** via la matrice de parité publique mise en forme systématique, en exploitant l'injectivité de l'application $\Phi_G$.
 
-Une étude détaillée du seuil de bruit toléré ($\sigma_c$), du nombre minimum de couples requis ($n_{min}(p)$), ainsi qu'une analyse du cas pathologique des bases normales engendrées par $X$ (premiers d'Artin) sont présentées dans le mémoire.
+Une étude détaillée du seuil de bruit toléré ($\sigma_c$), du nombre minimum de couples requis n$_{min}$(p), ainsi qu'une analyse du cas pathologique des bases normales engendrées par $X$ (premiers d'Artin) sont présentées dans le mémoire.
 
 ## Comparaison
 

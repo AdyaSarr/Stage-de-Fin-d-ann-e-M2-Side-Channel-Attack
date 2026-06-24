@@ -179,20 +179,17 @@ Voici un tableau comparatif:
 ### Théorème 1: Identifiabilite
 Ce théorème donne des **conditions necessaires et suffisantes(C1, C2, C1)** pour lesquelles la **séquence de poids** determine de manière **unique** le couple **(a,b)**.
 
-Soient $(a, b), (a', b')$ $\in$ $mathbb{Z}/P\mathbb{Z}$ $\times$ $\mathbb{Z}/P\mathbb{Z}$ deux couples vérifiant les trois hypothèses suivantes :
-\begin{itemize}
-\item[\textbf{(C1)}] $a$ et $a'$ sont \emph{primitifs} modulo $P$, c'est-à-dire $\gcd(a, P) = \gcd(a', P) = 1$.
-
-\item[\textbf{(C2)}] $N \geq N_0(m, \pi)$, où $N_0(m, \pi)$ est le seuil défini précisément à la Définition~\ref{def:N0}.
-
-\item[\textbf{(C3 étendue)}] $\Stab_{\Aff}(f) = \{(1, 0)\}$ : le seul élément du groupe affine préservant $f$ est l'identité.
-\end{itemize}
+Soient $(a, b), (a', b')$ $\in$ $\mathbb{Z}/P\mathbb{Z}$ $\times$ $\mathbb{Z}/P\mathbb{Z}$ deux couples vérifiant les trois hypothèses suivantes :
+$\begin{itemize}
+\item[\textbf{(C1)}] $a$ et $a'$ sont \emph{primitifs} modulo $P$, c'est-à-dire $\gcd(a, P) = \gcd(a', P) = 1$. \item[\textbf{(C2)}] $N \geq N_0(m, \pi)$, où $N_0(m, \pi)$ est le seuil défini précisément à la Définition~\ref{def:N0}. \item[\textbf{(C3 étendue)}] $\Stab_{\Aff}(f) = \{(1, 0)\}$ : le seul élément du groupe affine préservant $f$ est l'identité.\end{itemize}$
 
 |   **Parametres**                |   **C1**                                   |**C2**                                        |   **C3**  |
 |---------------------------------|--------------------------------------------|----------------------------------------------|-----------|
-|   mceliece348864                |  Regarder les 42.19% des elements du corps |   $N_0$ = 18 suffit pour distinguer 42.19% des elements de maniere unique |  Le **stablisateur affine** est **trivial**        |
+|   mceliece348864                |  Regarder les 42.19% des elements du corps |   $N_0$ = 18 suffit pour distinguer 42.19% des elements de maniere unique |  Le **stablisateur affine** est **trivial**|
 |   mceliece460896                |  Regarder les 99.99% des elements du corps |   $N_0$ = 21 suffit pour distinguer 99.99% des elements de maniere unique |  Le **stablisateur affine** est **trivial**|
 |   mceliece6688128               |  Regarder les 99.99% des elements du corps |   $N_0$ = 21 suffit pour distinguer 99.99% des elements de maniere unique |  Le **stablisateur affine** est **trivial**|
+|   mceliece6960119               |  Regarder les 99.99% des elements du corps |   $N_0$ = 21 suffit pour distinguer 99.99% des elements de maniere unique |  Le **stablisateur affine** est **trivial**|
+|   mceliece8192128               |  Regarder les 99.99% des elements du corps |   $N_0$ = 21 suffit pour distinguer 99.99% des elements de maniere unique |  Le **stablisateur affine** est **trivial**|
 ## Références
 
 1. **Classic McEliece team.** *Classic McEliece: conservative code-based cryptography*. NIST PQC Round 4 submission (2022). [https://classic.mceliece.org/](https://classic.mceliece.org/)

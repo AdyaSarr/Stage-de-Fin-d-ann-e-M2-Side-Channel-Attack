@@ -11,6 +11,8 @@ from random import choice
 #                               The official irreducible polynomial of Classic McEliece
 #====================================================================================================
 CLASSIC_MCELIECE_IRREDUCIBLE_POLYNOMIAL = {
+    #cas du polynme cyclotomique pour m =12
+    'mceliece3488641':  {'m': 12, 't': 64,  'n': 3488, 'irreducible_polynomial':   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]},
     'mceliece348864':  {'m': 12, 't': 64,  'n': 3488, 'irreducible_polynomial':   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1]},
     'mceliece460896':  {'m': 13, 't': 96,  'n': 4608, 'irreducible_polynomial':   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1]},
     'mceliece6688128': {'m': 13, 't': 128, 'n': 6688, 'irreducible_polynomial':   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1]},

@@ -438,9 +438,9 @@ if __name__ == '__main__':
         if param.isdigit():
             param = 'mceliece' + param
     else:
-        param = 'mceliece348864'
+        #param = 'mceliece348864'
         #param = 'mceliece460896'
-        #param = 'mceliece6688128'
+        param = 'mceliece6688128'
         #param = 'mceliece6960119'
         #param = 'mceliece8192128'
     

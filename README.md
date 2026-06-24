@@ -182,7 +182,9 @@ Ce théorème donne des **conditions necessaires et suffisantes(C1, C2, C1)** po
 Soient $(a, b), (a', b')$ $\in$ $\mathbb{Z}/P\mathbb{Z}$ $\times$ $\mathbb{Z}/P\mathbb{Z}$ deux couples vérifiant les trois hypothèses suivantes :
 
 -(C1) $a$ et $a'$ sont \emph{primitifs} modulo $P$, c'est-à-dire $\gcd(a, P) = \gcd(a', P) = 1$.
+
 -(C2) $N \geq N_0(m, \pi)$, où $N_0(m, \pi)$ est le seuil défini précisément à la Définition~\ref{def:N0}.
+
 -(C3 étendue) $\Stab_{\Aff}(f) = \{(1, 0)\}$ : le seul élément du groupe affine préservant $f$ est l'identité.
 
 |   **Parametres**                |   **C1**                                   |**C2**                                        |   **C3**  |

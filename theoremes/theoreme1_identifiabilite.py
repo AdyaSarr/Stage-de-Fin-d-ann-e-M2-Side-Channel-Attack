@@ -389,7 +389,7 @@ if __name__ == '__main__':
             param = 'mceliece' + param
     else:
         param = 'mceliece348864'
-    N = 21
+    N = None
     result = verifier_theoreme(param, N, verbose=True)
     
     # Code de sortie pour usage en script

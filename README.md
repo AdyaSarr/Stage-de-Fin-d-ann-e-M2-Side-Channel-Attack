@@ -2,7 +2,8 @@
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![galois v0.4.11](https://mhostetter.github.io/galois/latest/)](https://mhostetter.github.io/galois/latest/)
+[![galois v0.4.11](https://img.shields.io/badge/galois-v0.4.11-blue.svg)](https://mhostetter.github.io/galois/latest/)
+
 Ce dépôt contient l'implémentation complète d'une attaque par canal auxiliaire (*side-channel attack*) contre le cryptosystème post-quantique **Classic McEliece**. Le travail est mené dans le cadre d'un stage de fin d'études M2 au **Laboratoire Hubert Curien** (Saint-Étienne), sous l'encadrement de **Pierre-Louis Cayrel(Maître de conférences HDR UJM - LabHC), Brice Colombier(chercheur et professeur en electronique et programmation a IUT Saint-Etienne), Michaël Bulois(Maitre de Conférences en Mathématiques  au laboratoire Institut Camille Jordan), Vincent GROSSO (CR Researcher, CNRS) et Vlad-Florin Dragoi (Professor (Associate) at Aurel Vlaicu University of Ara in Roumania)**
 
 ## Contexte

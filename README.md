@@ -188,8 +188,8 @@ Soient $(a, b), (a', b')$ $\in$ $mathbb(Z)/Pmathbb(Z)$ $\times$ $mathbb(Z)/Pmath
 \item[\textbf{(C3 étendue)}] $\Stab_{\Aff}(f) = \{(1, 0)\}$ : le seul élément du groupe affine préservant $f$ est l'identité.
 \end{itemize}
 
-|   **Parametres**                |   **C1**                                   |   **C2**                                                             |   **C3**  |
-|---------------------------------|--------------------------------------------|
+|   **Parametres**                |   **C1**                                   |**C2**                                        |   **C3**  |
+|---------------------------------|--------------------------------------------|----------------------------------------------|-----------|
 |   mceliece348864                |  Regarder les 42.19% des elements du corps |   N_0 = 18 suffit pour distinguer 42.19% des elements de maniere unique |  Le **stablisateur affine** est **trivial**        |
 |   mceliece460896                |  Regarder les 99.99% des elements du corps |   N_0 = 21 suffit pour distinguer 99.99% des elements de maniere unique |  Le **stablisateur affine** est **trivial**        |
 ## Références

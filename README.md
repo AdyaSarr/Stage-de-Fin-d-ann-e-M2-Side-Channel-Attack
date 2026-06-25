@@ -69,6 +69,16 @@ L'attaque réussit complètement (reconstruction de $G$ **et** de $L$) tant que 
 | 2.5  | 0.9979   | 3       | ✓      | ✓      |
 | 3.0  | 0.9827   | 25      | ✓      | ✓      |
 
+### Balayage de σ sur mceliece8192128
+ 
+| σ    | p_succès | erreurs | rec. G | rec. L |
+|------|----------|---------|--------|--------|
+| 0.5  | 1.0000   | 0       | ✓      | ✓      |
+| 1.0  | 1.0000   | 0       | ✓      | ✓      |
+| 1.5  | 1.0000   | 0       | ✓      | ✓      |
+| 2.0  | 1.0000   | 0       | ✓      | ✓      |
+| 2.5  | 0.9979   | 3       | ✓      | ✓      |
+| 3.0  | 0.9827   | 25      | ✓      | ✓      |
 ## Structure du dépôt
 ```text
 .
@@ -212,6 +222,8 @@ Soient $(a, b), (a', b')$ $\in$ $\mathbb{Z}/P\mathbb{Z}$ $\times$ $\mathbb{Z}/P\
 5. **Michaël Bulois , Pierre-Louis Cayrel , Vlad-Florin Drăgoi , and Vincent Grosso**.[https://hal.science/hal-05621977v1/document](https://hal.science/hal-05621977v1/document)
 
 6. **Annelie Heuser⋆, Olivier Rioul, and Sylvain Guilley**.[https://eprint.iacr.org/2014/527.pdf](https://eprint.iacr.org/2014/527.pdf)
+
+7. **Ian F. Blake, XuHong Gao, Ronald C. Mullin, Scott A. Vanstone & Tomik Yaghoobian.** [https://link.springer.com/chapter/10.1007/978-1-4757-2226-0_4](https://link.springer.com/chapter/10.1007/978-1-4757-2226-0_4)
 ## Auteur
 
 **Adya SARR**  

@@ -6,6 +6,8 @@
 import numpy as np
 import galois as gf 
 from random import choice
+from tqdm import tqdm
+import time
 
 #====================================================================================================
 #                               The official irreducible polynomial of Classic McEliece
@@ -63,12 +65,16 @@ class ClassicMcEliece:
         mt = self.m * self.t
         GF2 = gf.GF(2)
         
+        # for i in tqdm(range(1000)):
+        #     time.sleep(0.01)
         while True:
+            i = 0
             # === Step 1 : Generate the Goppa polynomial G ===
             while True:
                 g = gf.Poly.Random(self.t, field=self.GF2m)
                 if g.is_irreducible:
                     break
+            #print(f"g_{i} = {g}")
             if not g.is_monic:
                 g = g * (g.coeffs[0] ** -1)
             assert g.is_irreducible and g.is_monic and g.degree == self.t
@@ -77,9 +83,12 @@ class ClassicMcEliece:
             # === Step 2 : Generate the support L of the Goppa code ===
             while True:
                 L = self.GF2m(np.random.choice(self.GF2m.elements, self.n, replace=False))
+                #i = i + 1 
+                #print(i)
+                #print(f"L_{i} = {L}")
                 if np.all(self.G(L) != 0):
                     break
-        
+            
             self.L = L
 
             # === Step 3 : Generate the parity-check matrix H_F2m in F_{2^m}^{t x n} ===

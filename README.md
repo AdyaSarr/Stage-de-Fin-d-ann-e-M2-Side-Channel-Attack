@@ -70,7 +70,7 @@ L'attaque réussit complètement (reconstruction de $G$ **et** de $L$) tant que 
 | 3.0  | 0.9827   | 25      | ✓      | ✓      |
 
 ### Balayage de σ sur mceliece8192128
- 
+
 | σ    | p_succès | erreurs | rec. G | rec. L |
 |------|----------|---------|--------|--------|
 | 0.5  | 1.0000   | 0       | ✓      | ✓      |
@@ -189,7 +189,7 @@ Voici un tableau comparatif:
 | **Validation expérimentale** | ChipWhisperer (réel)      | Cortex-M4 (réel)           | Simulation + réel         | Simulation seule (à ce stade)                        |
 | **Code source public**       | Non                       | Oui (TCHES 2025)           | Oui (CIC 2025)            | Oui                                |
 
-## Verification des theoremes
+## Verification des theoremes et propositions
 ### Théorème 1: Identifiabilite
 Ce théorème donne des **conditions necessaires et suffisantes(C1, C2, C1)** pour lesquelles la **séquence de poids** determine de manière **unique** le couple **(a,b)**.
 
@@ -209,6 +209,23 @@ Soient $(a, b), (a', b')$ $\in$ $\mathbb{Z}/P\mathbb{Z}$ $\times$ $\mathbb{Z}/P\
 |   mceliece6960119               |  Regarder les 99.99% des elements du corps |   $N_0$ = 21 suffit pour distinguer 99.99% des elements de maniere unique |  Le **stablisateur affine** est **trivial**|
 |   mceliece8192128               |  Regarder les 99.99% des elements du corps |   $N_0$ = 21 suffit pour distinguer 99.99% des elements de maniere unique |  Le **stablisateur affine** est **trivial**|
 |   mceliece348864_poly_cyclo     |  Regarder les 42.19% des elements du corps |   Même a $N_0$ = 256 ne suffit pas pour distinguer les elements |  Le **stablisateur affine** n'est pas **trivial** car $X$ engendre une **base normale** avec le polynome cyclotomique|
+
+### Proposition 3: Critere d'un element soit un element engendre une base normale
+
+Cette proposition permet de caracteriser les elements engendrant une base normale sur le corps $\mathbb{F}_{2^m}$:
+Soit $\pi(X) \in \F_2[X]$ irréductible de degré $m$ et $\F_{2^m} = 
+\F_2[X]/\pi(X)$. Notons $M_X \in \F_2^{m \times m}$ la matrice dont la 
+$k$-ième colonne est la représentation binaire de $X^{2^k}$ dans la base 
+canonique $(1, X, X^2, \ldots, X^{m-1})$ de $\F_{2^m}$ :
+\[
+M_X[i, k] := \bigl(\text{coefficient de } X^i \text{ dans } X^{2^k}\bigr) 
+\in \F_2.
+\]
+Alors $X$ engendre une base normale de $\F_{2^m}$ sur $\F_2$ si et 
+seulement si
+\[
+\det_{\F_2}(M_X) \neq 0,
+\]
 ## Références
 
 1. **Classic McEliece team.** *Classic McEliece: conservative code-based cryptography*. NIST PQC Round 4 submission (2022). [https://classic.mceliece.org/](https://classic.mceliece.org/)
@@ -223,7 +240,11 @@ Soient $(a, b), (a', b')$ $\in$ $\mathbb{Z}/P\mathbb{Z}$ $\times$ $\mathbb{Z}/P\
 
 6. **Annelie Heuser⋆, Olivier Rioul, and Sylvain Guilley**.[https://eprint.iacr.org/2014/527.pdf](https://eprint.iacr.org/2014/527.pdf)
 
-7. **Ian F. Blake, XuHong Gao, Ronald C. Mullin, Scott A. Vanstone & Tomik Yaghoobian.** [https://link.springer.com/chapter/10.1007/978-1-4757-2226-0_4](https://link.springer.com/chapter/10.1007/978-1-4757-2226-0_4)
+7. **D. PEl, C. WANG AND J.OMURA.**[https://ieeexplore.ieee.org/document/1057152](https://ieeexplore.ieee.org/document/1057152)
+
+8. **Ian F. Blake, XuHong Gao, Ronald C. Mullin, Scott A. Vanstone & Tomik Yaghoobian.** [https://link.springer.com/chapter/10.1007/978-1-4757-2226-0_4](https://link.springer.com/chapter/10.1007/978-1-4757-2226-0_4)
+
+9. **Deking.**[https://perso.eleves.ens-rennes.fr/people/david.michel/agreg/Dedekind.pdf](https://perso.eleves.ens-rennes.fr/people/david.michel/agreg/Dedekind.pdf)
 ## Auteur
 
 **Adya SARR**  

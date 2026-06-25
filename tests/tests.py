@@ -440,9 +440,9 @@ if __name__ == '__main__':
     else:
         #param = 'mceliece348864'
         #param = 'mceliece460896'
-        param = 'mceliece6688128'
+        #param = 'mceliece6688128'
         #param = 'mceliece6960119'
-        #param = 'mceliece8192128'
+        param = 'mceliece8192128'
     
     print()
     print("#" * 70)

@@ -212,19 +212,32 @@ Soient $(a, b), (a', b')$ $\in$ $\mathbb{Z}/P\mathbb{Z}$ $\times$ $\mathbb{Z}/P\
 
 ### Proposition 3: Critere d'un element soit un element engendre une base normale
 
-Cette proposition permet de caracteriser les elements engendrant une base normale sur le corps $\mathbb{F}$$_{2^m}$:
-Soit $\pi(X)$ $\in$ $\mathbb{F}_2[X]$ irréductible de degré $m$ et $\mathbb{F}_{2^m} = \F_2[X]/\pi(X)$.
-Notons $M_X \in \F_2^{m \times m}$ la matrice dont la  $k$-ième colonne est la représentation binaire de $X^{2^k}$ dans la base 
-canonique $(1, X, X^2, \ldots, X^{m-1})$ de $\F_{2^m}$ :
-\[
-M_X[i, k] := \bigl(\text{coefficient de } X^i \text{ dans } X^{2^k}\bigr) 
-\in \F_2.
-\]
-Alors $X$ engendre une base normale de $\F_{2^m}$ sur $\F_2$ si et 
-seulement si
-\[
-\det_{\F_2}(M_X) \neq 0,
-\]
+Cette proposition permet de caractériser les éléments qui engendrent une base normale du corps $\mathbb{F}_{2^m}$.
+
+Soit $\pi(X) \in \mathbb{F}*2[X]$ un polynôme irréductible de degré $m$, et soit
+[
+\mathbb{F}*{2^m} \simeq \mathbb{F}_2[X]/(\pi(X)).
+]
+
+Notons $M_X \in \mathbb{F}*2^{m \times m}$ la matrice dont la $k$-ième colonne est la représentation binaire de $X^{2^k}$ dans la base canonique
+[
+(1, X, X^2, \ldots, X^{m-1})
+]
+de $\mathbb{F}*{2^m}$, c'est-à-dire
+[
+M_X[i,k]
+========
+
+\text{coefficient de } X^i \text{ dans } X^{2^k}
+\in \mathbb{F}_2.
+]
+
+Alors $X$ engendre une base normale de $\mathbb{F}_{2^m}$ sur $\mathbb{F}*2$ si et seulement si
+[
+\det*{\mathbb{F}_2}(M_X) \neq 0.
+]
+
+
 ## Références
 
 1. **Classic McEliece team.** *Classic McEliece: conservative code-based cryptography*. NIST PQC Round 4 submission (2022). [https://classic.mceliece.org/](https://classic.mceliece.org/)

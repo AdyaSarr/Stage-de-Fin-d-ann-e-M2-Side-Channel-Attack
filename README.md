@@ -212,10 +212,9 @@ Soient $(a, b), (a', b')$ $\in$ $\mathbb{Z}/P\mathbb{Z}$ $\times$ $\mathbb{Z}/P\
 
 ### Proposition 3: Critere d'un element soit un element engendre une base normale
 
-Cette proposition permet de caracteriser les elements engendrant une base normale sur le corps $\mathbb{F}_{2^m}$:
-Soit $\pi(X) \in \F_2[X]$ irréductible de degré $m$ et $\F_{2^m} = 
-\F_2[X]/\pi(X)$. Notons $M_X \in \F_2^{m \times m}$ la matrice dont la 
-$k$-ième colonne est la représentation binaire de $X^{2^k}$ dans la base 
+Cette proposition permet de caracteriser les elements engendrant une base normale sur le corps $\mathbb{F}$$_{2^m}$:
+Soit $\pi(X)$ $\in$ $\mathbb{F}_2[X]$ irréductible de degré $m$ et $\mathbb{F}_{2^m} = \F_2[X]/\pi(X)$.
+Notons $M_X \in \F_2^{m \times m}$ la matrice dont la  $k$-ième colonne est la représentation binaire de $X^{2^k}$ dans la base 
 canonique $(1, X, X^2, \ldots, X^{m-1})$ de $\F_{2^m}$ :
 \[
 M_X[i, k] := \bigl(\text{coefficient de } X^i \text{ dans } X^{2^k}\bigr) 

@@ -230,9 +230,7 @@ $$
 où $\bigl[X^i\bigr]P$ désigne le coefficient de $X^i$ dans le polynôme $P$.
 
 Alors $X$ engendre une base normale de $\mathbb{F}_{2^m}$ sur $\mathbb{F}_2$ si et seulement si
-$$
-\det(M_X)\neq 0.
-$$
+$$\det(M_X)\neq 0$$
 
 
 ## Références

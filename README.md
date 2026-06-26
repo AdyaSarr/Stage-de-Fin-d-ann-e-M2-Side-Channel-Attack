@@ -219,7 +219,7 @@ Soit $\pi(X) \in \mathbb{F}_2[X]$ un polynôme irréductible de degré $m$, et s
 $$\mathbb{F}_{2^m} = \mathbb{F}_2[X]/(\pi(X))$$.
 
 
-Notons $$M_X \in \mathbb{F}_2^{m \times m}$$ la matrice dont la $k$-ième colonne est le vecteur des coefficients de $X^{2^k}$ dans la base canonique
+Notons $$M_X \in \mathbb{F}_2^{m \times m}$$, la matrice dont la $k$-ième colonne est le vecteur des coefficients de $X^{2^k}$ dans la base canonique
 $$(1, X, X^2, \ldots, X^{m-1})$$
 de $\mathbb{F}_{2^m}$, c'est-à-dire
 
@@ -227,7 +227,7 @@ $$M_X[i,k]=
 \bigl[X^i\bigr],X^{2^k}
 \in \mathbb{F}_2,
 $$
-où $\bigl[X^i\bigr]P$ désigne le coefficient de $X^i$ dans le polynôme $P$.
+où $\bigl[coefficients de X^i\bigr dans $]P$ désigne le coefficient de $X^i$ dans le polynôme $P$.
 
 Alors $X$ engendre une base normale de $\mathbb{F}_{2^m}$ sur $\mathbb{F}_2$ si et seulement si
 $$\det(M_X)\neq 0$$

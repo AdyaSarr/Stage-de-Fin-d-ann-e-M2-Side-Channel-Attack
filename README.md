@@ -214,7 +214,7 @@ Soient $(a, b), (a', b')$ $\in$ $\mathbb{Z}/P\mathbb{Z}$ $\times$ $\mathbb{Z}/P\
 
 Cette proposition caractérise les éléments de $\mathbb{F}_{2^m}$ qui engendrent une base normale sur $\mathbb{F}_2$.
 
-Soit $\pi(X) \in \mathbb{F}*2[X]$ un polynôme irréductible de degré $m$, et soit
+Soit $\pi(X) \in \mathbb{F}_2[X]$ un polynôme irréductible de degré $m$, et soit
 
 $$\mathbb{F}*{2^m} = \mathbb{F}_2[X]/(\pi(X))$$.
 

@@ -220,7 +220,7 @@ $$\mathbb{F}_{2^m} = \mathbb{F}_2[X]/(\pi(X))$$.
 
 
 Notons $M_X \in \mathbb{F}_2^{m \times m}$ la matrice dont la $k$-ième colonne est le vecteur des coefficients de $X^{2^k}$ dans la base canonique
-$(1, X, X^2, \ldots, X^{m-1})$
+$$(1, X, X^2, \ldots, X^{m-1})$$
 de $\mathbb{F}_{2^m}$, c'est-à-dire
 
 $$M_X[i,k]=

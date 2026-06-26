@@ -232,11 +232,11 @@ $$\det(M_X)\neq 0$$
 |   **Parametres**           |   **m**  |    **Polynome**                 |   **Rang**    |   **Base Normale?**    |
 |----------------------------|----------|---------------------------------|---------------|------------------------|
 |   mceliece348864           |   12     |    x^12 + x^3 + 1               |       8       |           Non          |
-|   mceliece460896           |   13     |    13 x^13 + x^4 + x^3 + x + 1  |       12       |           Non          |
-|   mceliece6688128          |   13     |    13 x^13 + x^4 + x^3 + x + 1  |       12       |           Non          |
-|   mceliece6960119          |   13     |    13 x^13 + x^4 + x^3 + x + 1  |       12       |           Non          |
-|   mceliece8192128          |   13     |    13 x^13 + x^4 + x^3 + x + 1  |       12       |           Non          |
-|   mceliece348864_poly_cyclo|   12     |    12 x^12 + x^11 + x^10 + x^9 + x^8 + x^7 + x^6 + x^5 + x^4 + x^3 + x^2 + x + 1                                 |       12       |           OUI          |
+|   mceliece460896           |   13     |    x^13 + x^4 + x^3 + x + 1  |       12       |           Non          |
+|   mceliece6688128          |   13     |    x^13 + x^4 + x^3 + x + 1  |       12       |           Non          |
+|   mceliece6960119          |   13     |    x^13 + x^4 + x^3 + x + 1  |       12       |           Non          |
+|   mceliece8192128          |   13     |    x^13 + x^4 + x^3 + x + 1  |       12       |           Non          |
+|   mceliece348864_poly_cyclo|   12     |    x^12 + x^11 + x^10 + x^9 + x^8 + x^7 + x^6 + x^5 + x^4 + x^3 + x^2 + x + 1                                 |       12       |           OUI          |
 
 ## Références
 

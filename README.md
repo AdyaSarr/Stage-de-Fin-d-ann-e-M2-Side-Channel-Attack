@@ -223,10 +223,10 @@ Notons $M_X$ $\in$ $\mathbb{F_2}^{m \times m}$ la matrice dont la k-ième colonn
 ($1, X, X^2, \dots, X^{m-1}$) de $\mathbb{F}_{2^m}$
 
 $$M_X[i,k]=
-\bigl[X^i\bigr]$
+\bigl[X^i\bigr],X^{2^k}
 \in \mathbb{F}_2,
 $$
-où $\bigl[X^i\bigr]$ désigne le coefficient de $X^i$ dans $X^{2^k}$.
+où $\bigl[X^i\bigr]P$ désigne le coefficient de $X^i$ dans le polynôme $P$.
 
 Alors $X$ engendre une base normale de $\mathbb{F}_{2^m}$ sur $\mathbb{F}_2$ si et seulement si
 $$\det(M_X)\neq 0$$

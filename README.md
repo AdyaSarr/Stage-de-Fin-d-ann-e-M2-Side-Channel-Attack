@@ -229,6 +229,9 @@ où $\bigl[X^i\bigr]$ désigne le coefficient de $X^i$ dans $X^{2^k}$.
 Alors $X$ engendre une base normale de $\mathbb{F}_{2^m}$ sur $\mathbb{F}_2$ si et seulement si
 $$\det(M_X)\neq 0$$
 
+|   **Parametres**  |   **m**  |    **Polynome**    |   **Rang**    |   **Base Normale?**    |
+|-------------------|----------|--------------------|---------------|------------------------|
+|   mceliece348864  |   12     |    x^12 + x^3 + 1  |       8       |           Non          |
 
 ## Références
 

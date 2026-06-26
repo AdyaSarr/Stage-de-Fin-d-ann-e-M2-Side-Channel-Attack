@@ -219,7 +219,8 @@ Soit $\pi(X) \in \mathbb{F}_2[X]$ un polynôme irréductible de degré $m$, et s
 $$\mathbb{F}_{2^m} = \mathbb{F}_2[X]/(\pi(X))$$.
 
 
-Notons $M_X$ $\in$ $\mathbb{F_2}^{m \times m}$
+Notons $M_X$ $\in$ $\mathbb{F_2}^{m \times m}$ la matrice dont la k-ième colonne est la représentation binaire de $X^{2^k}$ dans la base canonique
+($1, X, X^2, \dots, X^{m-1}$) de $\mathbb{F}_{2^m}$
 
 $$M_X[i,k]=
 \bigl[X^i\bigr],X^{2^k}
